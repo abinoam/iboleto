@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = IBoleto::VERSION
   spec.authors       = ["Abinoam Praxedes Marques Jr."]
   spec.email         = ["abinoam@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Linux compatible CLI Ruby server for IBoleto android app}
+  spec.description   = %q{Linux compatible CLI Ruby server for QuadriMind IBoleto android app - http://www.quadrimind.com/iBoleto/}
   spec.homepage      = ""
   spec.license       = "MIT"
 
