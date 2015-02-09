@@ -1,4 +1,5 @@
 # IBoleto.rb
+[![Gem Version](https://badge.fury.io/rb/iboleto.svg)](http://badge.fury.io/rb/iboleto)
 
 [English README](README.en.md)
 
