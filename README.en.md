@@ -1,5 +1,7 @@
 # IBoleto.rb
 
+[README em português](README.md)
+
 IBoleto.rb is a Linux compatible CLI server for Quadrimind IBoleto android application.
 Quadrimind IBoleto scans (brazilian format) bills' barcodes and sends to a server (Ex: IBoleto.rb).
 IBoleto.rb uses gtk to copy to clipboard the barcode number sequence in more than one format.
