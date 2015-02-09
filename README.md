@@ -1,31 +1,22 @@
-# IBoleto
+# IBoleto.rb
 
-TODO: Write a gem description
+IBoleto.rb é servidor em linha de comando compatível com Linux para o aplicativo de android IBoleto da Quadrimind.
+O IBoleto da Quadrimind intepreta códigos de barra do formato brasileiro e os envia a um servidor (Ex: IBoleto.rb)
+IBoleto.rb usa gtk para copiar para a área de trabalho a sequência de números do código de barra em mais de um formato.
+Então você pode colar os números no seu **internet bank** para realizar o pagamento.
 
-## Installation
+## Instalação
 
-Add this line to your application's Gemfile:
+	$ gem install iboleto
 
-```ruby
-gem 'iboleto'
-```
+## Uso
 
-And then execute:
+	$ iboleto
 
-    $ bundle
+## Para contribuir
 
-Or install it yourself as:
-
-    $ gem install iboleto
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/iboleto/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+1. Fork ( https://github.com/abinoam/iboleto/fork )
+2. Crie uma branch de funcionalidade (`git checkout -b my-new-feature`)
+3. Faça um **commit** das suas mudanças (`git commit -am 'Add some feature'`)
+4. Faça um **push** da sua branch (`git push origin my-new-feature`)
+5. Crie um novo **Pull Request**
