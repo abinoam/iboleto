@@ -26,4 +26,4 @@ Então você pode colar os números no seu **internet bank** para realizar o pag
 
 ## Homepage
 
-	https://github.com/abinoam/iboleto
+https://github.com/abinoam/iboleto
