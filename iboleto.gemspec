@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["abinoam@gmail.com"]
   spec.summary       = %q{Linux compatible CLI Ruby server for IBoleto android app}
   spec.description   = %q{Linux compatible CLI Ruby server for QuadriMind IBoleto android app - http://www.quadrimind.com/iBoleto/}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/abinoam/iboleto"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
