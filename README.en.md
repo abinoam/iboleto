@@ -3,7 +3,7 @@
 
 [README em português](README.md)
 
-IBoleto.rb is a Linux compatible CLI server for Quadrimind IBoleto android application.
+**IBoleto.rb** is a Linux compatible CLI server for **Quadrimind IBoleto android application**.
 Quadrimind IBoleto scans (brazilian format) bills' barcodes and sends to a server (Ex: IBoleto.rb).
 IBoleto.rb uses gtk to copy to clipboard the barcode number sequence in more than one format.
 So you can past it at your internet bank for payment.
@@ -29,3 +29,7 @@ Add this line to your application's Gemfile:
 ## Homepage
 
 https://github.com/abinoam/iboleto
+
+## Note
+
+I'm not affliated in any way to Quadrimind.
