@@ -1,4 +1,4 @@
-# Iboleto
+# IBoleto
 
 TODO: Write a gem description
 

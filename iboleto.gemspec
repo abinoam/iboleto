@@ -5,7 +5,7 @@ require 'iboleto/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "iboleto"
-  spec.version       = Iboleto::VERSION
+  spec.version       = IBoleto::VERSION
   spec.authors       = ["Abinoam Praxedes Marques Jr."]
   spec.email         = ["abinoam@gmail.com"]
   spec.summary       = %q{TODO: Write a short summary. Required.}

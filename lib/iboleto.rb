@@ -1,5 +1,5 @@
 require "iboleto/version"
 
-module Iboleto
+module IBoleto
   # Your code goes here...
 end
