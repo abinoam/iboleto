@@ -1,0 +1,3 @@
+module Iboleto
+  VERSION = "0.0.1"
+end
