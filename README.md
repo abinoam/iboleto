@@ -16,6 +16,13 @@ Então você pode colar os números no seu **internet bank** para realizar o pag
 
 	$ iboleto
 
+## Suporte à copiar/colar do GTK-2
+Se você deseja que o iboleto automaticamente copie para
+àrea de trabalho o código de barras lido, basta você instalar
+a gem __gtk2__ com o comando abaixo
+
+  $ gem install gtk2
+
 ## Para contribuir
 
 1. Fork ( https://github.com/abinoam/iboleto/fork )
