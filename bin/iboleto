@@ -3,7 +3,13 @@
 
 # Last updated at October, 06, 2014.
 
-require 'gtk2'
+# Require gtk2 if available
+
+begin
+  require 'gtk2'
+rescue LoadError
+end
+
 require 'socket'
 
 class ClientQuitError < RuntimeError; end
@@ -33,8 +39,6 @@ loop do
     begin
       while line = s.gets # read a line at a time
         if m = line.match(/POST \/iBoleto\?cod=(\d+)+&dec=(\d+)/)
-          clip = Gtk::Clipboard.get(Gdk::Selection::CLIPBOARD)
-
           cod = m[1]
           dec = m[2]
 
@@ -46,8 +50,13 @@ loop do
           conv = dec.dup.sub!(conv_regexp, '\1 \2 \3 \4')
           conv_with_tabs = dec.dup.sub!(conv_regexp, "\\1\t\\2\t\\3\t\\4")
 
-          clip.set_text([cod, dec, boleto, boleto_with_tabs, conv, conv_with_tabs].compact.join("\n"))
-          clip.store
+          boleto_info = [cod, dec, boleto, boleto_with_tabs, conv, conv_with_tabs].compact.join("\n")
+
+          if defined? Gtk
+            clip = Gtk::Clipboard.get(Gdk::Selection::CLIPBOARD)
+            clip.set_text(boleto_info)
+            clip.store
+          end
         end
 
         if ["\n\r", "\n", "\r\n"].include? line
