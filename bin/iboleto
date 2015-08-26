@@ -43,7 +43,7 @@ loop do
           dec = m[2]
 
           boleto_regexp = /\A(\w{5})(\w{5})(\w{5})(\w{6})(\w{5})(\w{6})(\w{1})(\w{14})\Z/
-          boleto = dec.dup.sub!(boleto_regexp, '\1 2 \3 \4 \5 \6 \7 \8')
+          boleto = dec.dup.sub!(boleto_regexp, '\1 \2 \3 \4 \5 \6 \7 \8')
           boleto_with_tabs = dec.dup.sub!(boleto_regexp, "\\1\t\\2\t\\3\t\\4\t\\5\t\\6\t\\7\t\\8")
 
           conv_regexp = /\A(\d{12})(\d{12})(\d{12})(\d{12})\Z/
