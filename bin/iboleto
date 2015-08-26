@@ -52,6 +52,11 @@ loop do
 
           boleto_info = [cod, dec, boleto, boleto_with_tabs, conv, conv_with_tabs].compact.join("\n")
 
+          puts
+          puts "Boleto Information (in more than one format/spacing):"
+          puts boleto_info
+          puts
+
           if defined? Gtk
             clip = Gtk::Clipboard.get(Gdk::Selection::CLIPBOARD)
             clip.set_text(boleto_info)
