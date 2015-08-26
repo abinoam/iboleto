@@ -18,6 +18,12 @@ Add this line to your application's Gemfile:
 
 		$ iboleto
 
+## GTK-2 copy/paste support
+If you want iboleto to clipboard copy the read barcode, you just
+need to install the __gtk2__ gem with the following command:
+
+  $ gem install gtk2
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/iboleto/fork )

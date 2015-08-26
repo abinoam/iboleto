@@ -3,7 +3,13 @@
 
 # Last updated at October, 06, 2014.
 
-require 'gtk2'
+# Require gtk2 if available
+
+begin
+  require 'gtk2'
+rescue LoadError
+end
+
 require 'socket'
 
 class ClientQuitError < RuntimeError; end
@@ -33,21 +39,29 @@ loop do
     begin
       while line = s.gets # read a line at a time
         if m = line.match(/POST \/iBoleto\?cod=(\d+)+&dec=(\d+)/)
-          clip = Gtk::Clipboard.get(Gdk::Selection::CLIPBOARD)
-
           cod = m[1]
           dec = m[2]
 
           boleto_regexp = /\A(\w{5})(\w{5})(\w{5})(\w{6})(\w{5})(\w{6})(\w{1})(\w{14})\Z/
-          boleto = dec.dup.sub!(boleto_regexp, '\1 2 \3 \4 \5 \6 \7 \8')
+          boleto = dec.dup.sub!(boleto_regexp, '\1 \2 \3 \4 \5 \6 \7 \8')
           boleto_with_tabs = dec.dup.sub!(boleto_regexp, "\\1\t\\2\t\\3\t\\4\t\\5\t\\6\t\\7\t\\8")
 
           conv_regexp = /\A(\d{12})(\d{12})(\d{12})(\d{12})\Z/
           conv = dec.dup.sub!(conv_regexp, '\1 \2 \3 \4')
           conv_with_tabs = dec.dup.sub!(conv_regexp, "\\1\t\\2\t\\3\t\\4")
 
-          clip.set_text([cod, dec, boleto, boleto_with_tabs, conv, conv_with_tabs].compact.join("\n"))
-          clip.store
+          boleto_info = [cod, dec, boleto, boleto_with_tabs, conv, conv_with_tabs].compact.join("\n")
+
+          puts
+          puts "Boleto Information (in more than one format/spacing):"
+          puts boleto_info
+          puts
+
+          if defined? Gtk
+            clip = Gtk::Clipboard.get(Gdk::Selection::CLIPBOARD)
+            clip.set_text(boleto_info)
+            clip.store
+          end
         end
 
         if ["\n\r", "\n", "\r\n"].include? line
